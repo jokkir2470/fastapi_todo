@@ -1,2 +1,40 @@
-.env
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# --- Virtual environment ---
 venv/
+ENV/
+env/
+.venv/
+
+# --- IDE ---
+.idea/
+.vscode/
+*.iml
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Jupyter / Notebooks ---
+.ipynb_checkpoints
+*.ipynb
+
+# --- Logs ---
+*.log
+
+# --- Alembic ---
+alembic/versions/*.pyc
+alembic/versions/__pycache__/
+# (миграции .py оставляем — это наш код, их игнорить нельзя!)
+
+# --- Env variables ---
+.env
