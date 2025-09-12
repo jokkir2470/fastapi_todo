@@ -21,6 +21,6 @@ def get_user_by_email(db:Session, email: str)->User | None:
 def get_user(db: Session,skip: int=0, limit:int=10):
     return db.query(User).offset(skip).limit(limit).all()
 
-def get_user_by_id(db:Session, user_id: int):
+def get_user_by_id(db:Session, user_id: int)-> User | None:
     return db.query(User).filter(User.id==user_id).first()
 

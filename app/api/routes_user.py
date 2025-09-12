@@ -5,7 +5,7 @@ from app.schemas.user import UserCreate, UserOut
 from app.CRUD import user as crud_user
 from typing import List
 
-router = APIRouter(prefix="/users", tags=["users"])
+router = APIRouter()
 
 @router.post(
     "/",
@@ -25,7 +25,7 @@ def user_create(user: UserCreate, db:Session = Depends(get_db)):
     response_model=UserOut,
     summary="Найти пользователя по id"
 )
-def read_user_by_id(user_id: int, db:Session=Depends(get_db)):
+def get_user_by_id(user_id: int, db:Session=Depends(get_db)):
     obj = crud_user.get_user_by_id(db, user_id)
     if not obj:
         raise HTTPException(status_code=404, detail="User not found")
